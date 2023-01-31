@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/onix-react-test-task/static/css/main.2e448992.css",
-    "main.js": "/onix-react-test-task/static/js/main.975477bf.js",
+    "main.js": "/onix-react-test-task/static/js/main.949c5143.js",
     "static/js/787.a522b2b0.chunk.js": "/onix-react-test-task/static/js/787.a522b2b0.chunk.js",
     "static/media/brand-4.png": "/onix-react-test-task/static/media/brand-4.e4bb74daefb8faa83ec8.png",
     "static/media/brand-8.png": "/onix-react-test-task/static/media/brand-8.de49269693af3b010ccb.png",
@@ -13,11 +13,11 @@
     "static/media/brand-3.png": "/onix-react-test-task/static/media/brand-3.b689c27d516229c14189.png",
     "index.html": "/onix-react-test-task/index.html",
     "main.2e448992.css.map": "/onix-react-test-task/static/css/main.2e448992.css.map",
-    "main.975477bf.js.map": "/onix-react-test-task/static/js/main.975477bf.js.map",
+    "main.949c5143.js.map": "/onix-react-test-task/static/js/main.949c5143.js.map",
     "787.a522b2b0.chunk.js.map": "/onix-react-test-task/static/js/787.a522b2b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e448992.css",
-    "static/js/main.975477bf.js"
+    "static/js/main.949c5143.js"
   ]
 }
