@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/onix-react-test-task/static/css/main.2e448992.css",
+    "main.js": "/onix-react-test-task/static/js/main.975477bf.js",
+    "static/js/787.a522b2b0.chunk.js": "/onix-react-test-task/static/js/787.a522b2b0.chunk.js",
+    "static/media/brand-4.png": "/onix-react-test-task/static/media/brand-4.e4bb74daefb8faa83ec8.png",
+    "static/media/brand-8.png": "/onix-react-test-task/static/media/brand-8.de49269693af3b010ccb.png",
+    "static/media/brand-2.png": "/onix-react-test-task/static/media/brand-2.dfd08dd2ec9190f89df5.png",
+    "static/media/brand-1.png": "/onix-react-test-task/static/media/brand-1.6005d6e0e119cb23a9c0.png",
+    "static/media/brand-5.png": "/onix-react-test-task/static/media/brand-5.63a498330751fce306fd.png",
+    "static/media/brand-7.png": "/onix-react-test-task/static/media/brand-7.d3bf0c5212bef91ae8f8.png",
+    "static/media/brand-6.png": "/onix-react-test-task/static/media/brand-6.f2e1cd856588c5cab869.png",
+    "static/media/brand-3.png": "/onix-react-test-task/static/media/brand-3.b689c27d516229c14189.png",
+    "index.html": "/onix-react-test-task/index.html",
+    "main.2e448992.css.map": "/onix-react-test-task/static/css/main.2e448992.css.map",
+    "main.975477bf.js.map": "/onix-react-test-task/static/js/main.975477bf.js.map",
+    "787.a522b2b0.chunk.js.map": "/onix-react-test-task/static/js/787.a522b2b0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e448992.css",
+    "static/js/main.975477bf.js"
+  ]
+}
