@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './index.css';
+import './Brand.css';
 
 export const Brand = ({title, subtitle, src}) => {
   return (

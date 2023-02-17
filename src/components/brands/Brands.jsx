@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Brand} from "../brand";
+import {Brand} from "../brand/Brand";
 
 import brand1 from "./assets/brand-1.png"
 import brand2 from "./assets/brand-2.png"
@@ -11,7 +11,7 @@ import brand6 from "./assets/brand-6.png"
 import brand7 from "./assets/brand-7.png"
 import brand8 from "./assets/brand-8.png"
 
-import './index.css';
+import './Brands.css';
 
 export const Brands = () => {
   const brands = [

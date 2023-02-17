@@ -1,9 +1,9 @@
 import './App.css';
 
-import {Header} from "./components/header";
-import {Goal} from "./components/goal";
-import {Brands} from "./components/brands";
-import {Footer} from "./components/footer";
+import {Header} from "./components/header/Header";
+import {Goal} from "./components/goal/Goal";
+import {Brands} from "./components/brands/Brands";
+import {Footer} from "./components/footer/Footer";
 
 function App() {
   return (
