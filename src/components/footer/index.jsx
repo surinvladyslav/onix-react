@@ -41,10 +41,10 @@ export const Footer = () => {
             </ul>
             <ul className="footer-items">
               <li className="footer-item">
-                <a className="footer-link" target="_blank" href="https://github.com/surinvladyslav/onix-react-test-task">GitHub</a>
+                <a className="footer-link" target="_blank" rel="noreferrer" href="https://github.com/surinvladyslav/onix-react-test-task">GitHub</a>
               </li>
               <li className="footer-item">
-                <a className="footer-link" target="_blank" href="https://www.figma.com/file/Oba2QZkVj9iECHjdmvXauB/Untitled?node-id=0%3A1&t=uOqHGe25giFDqmmi-1">Figma</a>
+                <a className="footer-link" target="_blank" rel="noreferrer" href="https://www.figma.com/file/Oba2QZkVj9iECHjdmvXauB/Untitled?node-id=0%3A1&t=uOqHGe25giFDqmmi-1">Figma</a>
               </li>
             </ul>
             <ul className="footer-items">
