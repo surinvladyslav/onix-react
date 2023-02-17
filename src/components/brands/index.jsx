@@ -1,54 +1,64 @@
 import React from 'react';
 
-import './index.css';
 import {Brand} from "../brand";
+
+import brand1 from "./assets/brand-1.png"
+import brand2 from "./assets/brand-2.png"
+import brand3 from "./assets/brand-3.png"
+import brand4 from "./assets/brand-4.png"
+import brand5 from "./assets/brand-5.png"
+import brand6 from "./assets/brand-6.png"
+import brand7 from "./assets/brand-7.png"
+import brand8 from "./assets/brand-8.png"
+
+import './index.css';
 
 export const Brands = () => {
   const brands = [
     {
       title: 'GIR: One Year In',
       subtitle: 'Case Study',
-      src: 'brand-1.png'
+      src: brand1
     },
     {
       title: 'Introducing Onsen',
       subtitle: 'new additions',
-      src: 'brand-2.png'
+      src: brand2
     },
     {
       title: 'Selling Your Shopify Brand: An Introduction',
       subtitle: 'Mergers & Acquisitions 101',
-      src: 'brand-3.png'
+      src: brand3
     },
     {
       title: '5 Reasons We Are Optimistic for 2023',
       subtitle: 'MERGERS & ACQUISITIONS 101',
-      src: 'brand-4.png'
+      src: brand4
     },
     {
       title: 'Why Right Now is a Great Time to Sell Your Brand',
       subtitle: 'MERGERS & ACQUISITIONS 101',
-      src: 'brand-5.png'
+      src: brand5
     },
     {
       title: 'Selling Your Shopify Brand: Week 1',
       subtitle: 'Mergers & Acquisitions 101',
-      src: 'brand-3.png'
+      src: brand3
     },
     {
       title: 'Pattern\'s 2022 Update',
       subtitle: 'THOUGHT LEADERSHIP',
-      src: 'brand-6.png'
+      src: brand6
     },
     {
       title: 'Introducing Yield',
       subtitle: 'New Additions',
-      src: 'brand-7.png'
+      src: brand7
     },
     {
       title: 'Introducing Poketo',
       subtitle: 'new additions',
-      src: 'brand-8.png'
+      src: brand8
     },
   ]
   return (
