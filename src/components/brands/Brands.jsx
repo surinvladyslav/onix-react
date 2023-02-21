@@ -68,9 +68,9 @@ export const Brands = () => {
           <p className="brands-title">Explore the brands joining Pattern Brands, the sales process & the founders behind them.👇🏽</p>
           <div className="brands-items">
             {
-              brands.map((brand, index) => (
+              brands.map((brand) => (
                 <Brand
-                  key={index}
+                  key={brand.title}
                   title={brand.title}
                   subtitle={brand.subtitle}
                   src={brand.src}
