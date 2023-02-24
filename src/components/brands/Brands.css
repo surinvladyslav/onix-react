@@ -12,9 +12,35 @@
   margin-bottom: 100px;
 }
 
-.brands-items {
+.brands-buttons {
   display: flex;
   justify-content: space-between;
-  grid-gap: 10px;
+  margin-bottom: 50px;
+}
+
+.brands-button {
+  background: #703412;
+  color: #FEFBF1;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: .2rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.brands-button:hover {
+  background: #b0633c;
+}
+
+.brands-button.disabled {
+  opacity: .50;
+  pointer-events: none;
+}
+
+.brands-items {
+  display: flex;
+  justify-content: center;
+  grid-gap: 3rem;
   flex-wrap: wrap;
 }
