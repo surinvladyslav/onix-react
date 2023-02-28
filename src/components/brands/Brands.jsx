@@ -59,28 +59,32 @@ export const Brands = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts').then(res => {
-      res.json().then(posts => {
+    const fetchAll = async () => {
+      try {
+        const [resPosts, resPhotos] = await Promise.all([
+          fetch('https://jsonplaceholder.typicode.com/posts'),
+          fetch('https://jsonplaceholder.typicode.com/photos')
+        ]);
+        const [posts, photos] = await Promise.all([
+          resPosts.json(),
+          resPhotos.json()
+        ])
         setPosts(posts)
-        fetch('https://jsonplaceholder.typicode.com/photos').then(res => {
-          res.json().then(photos => {
-            setPhotos(photos)
-            setBrands(
-              posts.slice(0, 3).map((post, index) => {
-                return {
-                  photo: photos[index],
-                  post: post,
-                }
-              })
-            )
-          });
-        }).catch((err) => {
-          console.log(err);
-        });
-      });
-    }).catch((err) => {
-      console.log(err);
-    });
+        setPhotos(photos)
+        setBrands(
+          posts.slice(0, 3).map((post, index) => {
+            return {
+              photo: photos[index],
+              post: post,
+            }
+          })
+        )
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    fetchAll()
   }, [])
 
   let addBrand = () => {
