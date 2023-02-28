@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import {Brand} from "../brand/Brand";
 
@@ -114,15 +114,15 @@ export const Brands = () => {
           <p className="brands-title">Explore the brands joining Pattern Brands, the sales process & the founders behind them.👇🏽</p>
           <div className="brands-buttons">
             <button
-              className={classNames("brands-button", {"disabled": brands.length === 100})}
+              className={cn("brands-button", {"disabled": brands.length === 100})}
               onClick={() => addBrand()}
             >add</button>
             <button
-              className={classNames("brands-button", {"disabled": brands.length < 2})}
+              className={cn("brands-button", {"disabled": brands.length < 2})}
               onClick={() => sortBrands()}
             >sort {sort ? "ascending" : "descending"}</button>
             <button
-              className={classNames("brands-button", {"disabled": brands.length === 0})}
+              className={cn("brands-button", {"disabled": brands.length === 0})}
               onClick={() => removeBrand()}
             >remove</button>
           </div>
