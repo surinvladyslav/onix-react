@@ -23,7 +23,7 @@
   color: #FEFBF1;
   border: none;
   padding: 1rem 2rem;
-  border-radius: .2rem;
+  border-radius: 0.5rem;
   text-transform: capitalize;
   cursor: pointer;
   transition: .2s;
@@ -35,6 +35,7 @@
 
 .brands-button.disabled {
   opacity: .50;
+  user-select: none;
   pointer-events: none;
 }
 

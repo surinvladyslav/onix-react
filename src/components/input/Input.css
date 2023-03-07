@@ -1,0 +1,67 @@
+.brands-input {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.brands-input.active {
+    top: 30%;
+    left: 50%;
+    opacity: 1;
+}
+
+input::placeholder {
+    color: #703412;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.brands-input input {
+    background: #FEFBF1;
+    width: 50%;
+    max-width: 600px;
+    border: 2px solid #703412;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    color: #703412;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.brands-input button {
+    background: #FEFBF1;
+    border: 2px solid #703412;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    color: #703412;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 29px;
+    margin-right: 0.5rem;
+}
+
+.brands-input button:hover {
+    background: #703412;
+    border: 2px solid #703412;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    color: #FEFBF1;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+}

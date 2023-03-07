@@ -2,14 +2,14 @@ import React from 'react';
 
 import './Footer.css';
 
-export const Footer = () => {
+function Footer() {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-inner">
           <h4 className="footer-title">contact</h4>
-          <p className="footer-subtitle">We're focused on building brands and a better future.</p>
-          <p className="footer-subtitle">If you'd like to partner with us, we're</p>
+          <p className="footer-subtitle">We&apos;rere focused on building brands and a better future.</p>
+          <p className="footer-subtitle">If you&apos;red like to partner with us, we&apos;rere</p>
           <div className="footer-items-wrapper">
             <ul className="footer-items">
               <li className="footer-item">
@@ -41,10 +41,24 @@ export const Footer = () => {
             </ul>
             <ul className="footer-items">
               <li className="footer-item">
-                <a className="footer-link" target="_blank" rel="noreferrer" href="https://github.com/surinvladyslav/onix-react-test-task">GitHub</a>
+                <a
+                  className="footer-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/surinvladyslav/onix-react-test-task"
+                >
+                  GitHub
+                </a>
               </li>
               <li className="footer-item">
-                <a className="footer-link" target="_blank" rel="noreferrer" href="https://www.figma.com/file/Oba2QZkVj9iECHjdmvXauB/Untitled?node-id=0%3A1&t=uOqHGe25giFDqmmi-1">Figma</a>
+                <a
+                  className="footer-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.figma.com/file/Oba2QZkVj9iECHjdmvXauB/Untitled?node-id=0%3A1&t=uOqHGe25giFDqmmi-1"
+                >
+                  Figma
+                </a>
               </li>
             </ul>
             <ul className="footer-items">
@@ -66,4 +80,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}
+
+export default Footer;

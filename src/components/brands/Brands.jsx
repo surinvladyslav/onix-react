@@ -1,149 +1,146 @@
-import React, {useEffect, useState} from 'react';
-import cn from 'classnames'
+import React, { useContext, useState } from 'react';
+import cn from 'classnames';
 
-import {Brand} from "../brand/Brand";
+import Brand from '../brand/Brand';
+import Input from '../input/Input';
+
+import { BrandContext } from '../../contexts/brandContext';
+import { actions } from '../../reducers/brandReducer';
+
+import useFetch from '../../hooks/useFetch';
+import useSortBrands from '../../hooks/useSortBrands';
 
 import './Brands.css';
 
-// const brands = [
-//   {
-//     title: 'GIR: One Year In',
-//     subtitle: 'Case Study',
-//     src: brand1
-//   },
-//   {
-//     title: 'Introducing Onsen',
-//     subtitle: 'new additions',
-//     src: brand2
-//   },
-//   {
-//     title: 'Selling Your Shopify Brand: An Introduction',
-//     subtitle: 'Mergers & Acquisitions 101',
-//     src: brand3
-//   },
-//   {
-//     title: '5 Reasons We Are Optimistic for 2023',
-//     subtitle: 'MERGERS & ACQUISITIONS 101',
-//     src: brand4
-//   },
-//   {
-//     title: 'Why Right Now is a Great Time to Sell Your Brand',
-//     subtitle: 'MERGERS & ACQUISITIONS 101',
-//     src: brand5
-//   },
-//   {
-//     title: 'Selling Your Shopify Brand: Week 1',
-//     subtitle: 'Mergers & Acquisitions 101',
-//     src: brand3
-//   },
-//   {
-//     title: 'Pattern\'s 2022 Update',
-//     subtitle: 'THOUGHT LEADERSHIP',
-//     src: brand6
-//   },
-//   {
-//     title: 'Introducing Yield',
-//     subtitle: 'New Additions',
-//     src: brand7
-//   },
-//   {
-//     title: 'Introducing Poketo',
-//     subtitle: 'new additions',
-//     src: brand8
-//   },
-// ]
-export const Brands = () => {
-  const [brands, setBrands] = useState([]);
-  const [sort, setSort] = useState(false);
-  const [photos, setPhotos] = useState([]);
-  const [posts, setPosts] = useState([]);
+function Brands() {
+  const {
+    brands,
+    photos,
+    posts,
+    dispatch
+  } = useContext(BrandContext);
 
-  useEffect(() => {
-    const fetchAll = async () => {
-      try {
-        const [resPosts, resPhotos] = await Promise.all([
-          fetch('https://jsonplaceholder.typicode.com/posts'),
-          fetch('https://jsonplaceholder.typicode.com/photos')
-        ]);
-        const [posts, photos] = await Promise.all([
-          resPosts.json(),
-          resPhotos.json()
-        ])
-        setPosts(posts)
-        setPhotos(photos)
-        setBrands(
-          posts.slice(0, 3).map((post, index) => {
-            return {
-              photo: photos[index],
-              post: post,
-            }
-          })
-        )
-      } catch (err) {
-        console.log(err);
+  useFetch();
+
+  const [currentBrand, setCurrentBrand] = useState(null);
+
+  const dragStartHandler = (e, brand) => {
+    setCurrentBrand(brand);
+  };
+
+  const dragEndHandler = (e) => {
+    e.preventDefault();
+  };
+
+  const dragOverHandler = (e) => {
+    e.preventDefault();
+  };
+
+  const dropHandler = (e, brand) => {
+    e.preventDefault();
+    dispatch({
+      type: actions.SORT_BRANDS,
+      payload: {
+        brandId: brand.id,
+        currentBrandId: currentBrand.id
       }
+    });
+  };
+
+  const onClickBrandHandler = (event, brandId) => {
+    if (event.detail === 2) {
+      dispatch({
+        type: actions.INPUT,
+        payload: {
+          active: true,
+          brandId
+        }
+      });
     }
+    dispatch({
+      type: actions.ACTIVE_BRAND,
+      payload: brandId,
+    });
+  };
 
-    fetchAll()
-  }, [])
+  const onClickAddBrandHandler = () => {
+    dispatch({
+      type: actions.ADD_BRAND,
+      payload: {
+        id: brands.length,
+        active: false,
+        photo: photos[brands.length],
+        post: posts[brands.length]
+      },
+    });
+  };
 
-  let addBrand = () => {
-    setBrands(prev => [
-        {
-          photo: photos[brands.length],
-          post: posts[brands.length]
-        },
-        ...prev
-      ]
-    )
-  }
+  const onClickRemoveBrandHandler = () => {
+    dispatch({
+      type: actions.REMOVE_BRAND,
+      payload: brands.length
+    });
+  };
 
-  let sortBrands = () => {
-    setSort(!sort)
-    if (sort) {
-      setBrands(brands.sort((a, b) => a.post.id - b.photo.id));
-      return;
-    }
-    setBrands(brands.sort((a, b) => a.post.id - b.photo.id).reverse());
-  }
-
-  let removeBrand = () => {
-    setBrands(brands.slice(1));
-  }
-  console.log(brands);
   return (
     <div className="brands">
       <div className="container">
         <div className="brands-inner">
-          <p className="brands-title">Explore the brands joining Pattern Brands, the sales process & the founders behind them.👇🏽</p>
+          <p className="brands-title">
+            Explore the brands joining Pattern Brands, the sales process & the founders behind them.👇🏽
+          </p>
           <div className="brands-buttons">
             <button
-              className={cn("brands-button", {"disabled": brands.length === 100})}
-              onClick={() => addBrand()}
-            >add</button>
+              className={cn('brands-button', { disabled: brands.length === 100 })}
+              onClick={() => onClickAddBrandHandler()}
+              type="button"
+            >
+              add brand
+            </button>
             <button
-              className={cn("brands-button", {"disabled": brands.length < 2})}
-              onClick={() => sortBrands()}
-            >sort {sort ? "ascending" : "descending"}</button>
+              className={cn('brands-button', { disabled: brands.length < 2 })}
+              onClick={() => {}}
+              type="button"
+            >
+              sort
+              {/* {' '} */}
+              {/* { true ? 'ascending' : 'descending'} */}
+            </button>
             <button
-              className={cn("brands-button", {"disabled": brands.length === 0})}
-              onClick={() => removeBrand()}
-            >remove</button>
+              className={cn('brands-button', { disabled: brands.length === 0 })}
+              onClick={() => onClickRemoveBrandHandler()}
+              type="button"
+            >
+              remove brand
+            </button>
           </div>
           <div className="brands-items">
             {
-              brands.map((brand) => (
-                <Brand
-                  key={brand.post.title}
-                  title={brand.post.title}
-                  subtitle={brand.post.body}
-                  url={brand.photo.url}
-                />
-              ))
+              brands
+              && brands
+                .sort(useSortBrands)
+                .map((brand) => (
+                  <Brand
+                    key={brand.post.title}
+                    title={brand.post.title}
+                    description={brand.post.body}
+                    url={brand.photo.url}
+                    active={brand.active}
+                    onClick={(event) => onClickBrandHandler(event, brand.id)}
+                    onDragStart={(event) => dragStartHandler(event, brand)}
+                    onDragEnd={(event) => dragEndHandler(event)}
+                    onDragLeave={(event) => dragEndHandler(event)}
+                    onDragOver={(event) => dragOverHandler(event)}
+                    onDrop={(event) => dropHandler(event, brand)}
+                  />
+                )).reverse()
             }
           </div>
+          <Input />
         </div>
       </div>
     </div>
   );
-};
+}
+
+export default Brands;
