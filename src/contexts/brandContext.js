@@ -1,4 +1,4 @@
-import React, { useMemo, useReducer } from 'react';
+import React, { createContext, useMemo, useReducer } from 'react';
 import PropTypes from 'prop-types';
 
 import { brandReducer } from '../reducers/brandReducer';
@@ -12,9 +12,10 @@ const initState = {
     active: false,
     brandId: null,
   },
+  theme: false,
   error: false,
 };
-export const BrandContext = React.createContext();
+export const BrandContext = createContext();
 function BrandContextProvider({ children }) {
   const [state, dispatch] = useReducer(brandReducer, initState);
 

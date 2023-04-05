@@ -17,8 +17,8 @@ function Brand({
   onDrop
 }) {
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-    <div
+    <button
+      type="submit"
       className={cn('brand', { active })}
       onDragStart={onDragStart}
       onDragEnd={onDragEnd}
@@ -31,7 +31,7 @@ function Brand({
       <img className="brand-image" src={url} alt="brand" />
       <h5 className="brand-title">{title}</h5>
       <p className="brand-subtitle">{description}</p>
-    </div>
+    </button>
   );
 }
 

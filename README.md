@@ -1,6 +1,6 @@
 # GitHub Pages
 
-[https://surinvladyslav.github.io/onix-react-test-task/](https://surinvladyslav.github.io/onix-react-test-task/)
+[https://surinvladyslav.github.io/onix-react](https://surinvladyslav.github.io/onix-react)
 
 # Getting Started with Create React App
 

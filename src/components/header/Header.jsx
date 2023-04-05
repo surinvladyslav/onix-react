@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { BrandContext } from '../../contexts/brandContext';
+import { actions } from '../../reducers/brandReducer';
 
 import './Header.css';
 
 function Header() {
+  const { theme, dispatch } = useContext(BrandContext);
   return (
     <header className="header">
       <div className="container">
@@ -32,6 +36,13 @@ function Header() {
               <a className="header-link" target="_blank" rel="noreferrer" href="https://onix.academy/">Onix Academy</a>
             </li>
           </ul>
+          <button
+            type="button"
+            className="header-button"
+            onClick={() => dispatch({ type: actions.THEME })}
+          >
+            {theme ? 'light' : 'dark'}
+          </button>
         </div>
       </div>
     </header>

@@ -1,4 +1,11 @@
 .App {
+  background: #FEFBF1;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.App.active {
+  background: #000000;
   text-align: center;
 }
 

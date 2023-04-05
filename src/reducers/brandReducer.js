@@ -9,10 +9,13 @@ export const actions = {
   CHANGE_BRAND: 'CHANGE_BRAND',
   SORT_BRANDS: 'SORT_BRANDS',
   REMOVE_BRAND: 'REMOVE_BRAND',
+  THEME: 'THEME',
 };
 export const brandReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
+    case actions.THEME:
+      return { ...state, theme: !state.theme };
     case actions.INITIAL_BRANDS:
       return { ...state, brands: payload };
     case actions.INITIAL_POSTS:
