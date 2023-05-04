@@ -9,6 +9,9 @@ import { actions } from '../../reducers/brandReducer';
 
 import useFetch from '../../hooks/useFetch';
 import useSortBrands from '../../hooks/useSortBrands';
+import useSortBrandsAction from '../../hooks/useSortBrandsAction';
+import useAddBrandAction from '../../hooks/useAddBrandAction';
+import useChangeBrandsAction from '../../hooks/useChangeBrandAction';
 
 import './Brands.css';
 
@@ -38,24 +41,12 @@ function Brands() {
 
   const dropHandler = (e, brand) => {
     e.preventDefault();
-    dispatch({
-      type: actions.SORT_BRANDS,
-      payload: {
-        brandId: brand.id,
-        currentBrandId: currentBrand.id
-      }
-    });
+    dispatch(useSortBrandsAction(brand.id, currentBrand.id));
   };
 
   const onClickBrandHandler = (event, brandId) => {
     if (event.detail === 2) {
-      dispatch({
-        type: actions.INPUT,
-        payload: {
-          active: true,
-          brandId
-        }
-      });
+      dispatch(useChangeBrandsAction(brandId));
     }
     dispatch({
       type: actions.ACTIVE_BRAND,
@@ -64,15 +55,7 @@ function Brands() {
   };
 
   const onClickAddBrandHandler = () => {
-    dispatch({
-      type: actions.ADD_BRAND,
-      payload: {
-        id: brands.length,
-        active: false,
-        photo: photos[brands.length],
-        post: posts[brands.length]
-      },
-    });
+    dispatch(useAddBrandAction(brands, posts, photos));
   };
 
   const onClickRemoveBrandHandler = () => {
