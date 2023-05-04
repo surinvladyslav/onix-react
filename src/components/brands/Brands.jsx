@@ -103,8 +103,6 @@ function Brands() {
               type="button"
             >
               sort
-              {/* {' '} */}
-              {/* { true ? 'ascending' : 'descending'} */}
             </button>
             <button
               className={cn('brands-button', { disabled: brands.length === 0 })}
